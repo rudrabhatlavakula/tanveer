@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+<link rel="stylesheet" type="text/css" href="css/mystyle.css">
+
+</head>
+<body>
+<input type="hiddden" value={{details}}>
+<center>
+<img src="images/modbee.jpg" id="modebeelogo">
+</center>
+<table>
+		<tr>
+			{% for rows in details %}
+			<td>
+				<ul id="menu">
+					{% include "dropdown.html" %}
+				</ul>
+			</td>
+			{% endfor %}
+		</tr>
+	</table> 
+</body>
+</html>
+
+
+
+

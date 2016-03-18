@@ -1,0 +1,22 @@
+var getMessage = require('event').EventEmitter;
+
+var getMessages = function(){
+	var msgEmitter = new EventEmitter();
+	setTimeout(function(){
+		msgEmitter.emit('begin');
+		msgEmitter.emit('message','node.js');
+		msgEmitter.emit('message','express.js');
+		msgEmitter.emit('end', 2);
+	}, 5000);
+	return msgEmitter;
+};
+
+var results = getMessages();
+
+result.on('message',function(msg){
+	console.log("received message->"+msg);
+	
+});
+result.on('end',function(num){
+	console.log("got"+num+"message events.");
+});
